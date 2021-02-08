@@ -1,0 +1,40 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <title>BackEnd</title>
+</head>
+
+<body>
+    <h1>Usuários Cadastrados</h1>
+    <strong>ID - Nome - Senha - Email - Usuario</strong>
+    <% if(dados.length > 0){ %>
+        <% for(i=0;i<dados.length;i++){%>
+            <p>
+                <%=dados[i].id %> -
+                    <%=dados[i].nome %> -
+                        <%=dados[i].senha %> -
+                            <%=dados[i].email %> -
+                                <%=dados[i].usuario %>
+            </p>
+            <%}}else{%>
+                <h2>Nenhum dado encontrado!</h2>
+                <%}%>
+
+                    <br>
+                    <h2>Buscar usuário:</h2>
+                    <form method="POST" action='/usuario/buscar/email'>
+                        Buscar E-mail: <input type="text" name='email'>
+                        <input type="submit" value="Pesquisar...">
+                    </form>
+                    <br>
+                    <form method="POST" action='/usuario/buscar/id'>
+                        Buscar ID: <input type="text" name='id'>
+                        <input type="submit" value="Pesquisar...">
+                    </form>
+                    <br>
+                    <h2>Cadastrar Usuário:</h2>
+                    <a href="/App/routes/usuariocad.js">Cadastrar Usuário</a>
+</body>
+
+</html>

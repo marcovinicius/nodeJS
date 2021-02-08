@@ -1,0 +1,26 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <h1>Cadastre um usuário:</h1>
+
+    <%if(validacao){%>
+        <% for(i=0;i<validacao.erros.length;i++){ %>
+            <p>
+                <%=validacao.erros[i].msg %>
+            </p>
+            <%}%>
+                <%}%>
+                    <form method="POST" action='/usuario/salvar'>
+                        Nome: <input type="text" name='nome' value="<%=dados.nome%>"><br /> Usuario: <input type="text" name='usuario' value="<%=dados.usuario%>"><br/> Email: <input type="text" name='email' value="<%=dados.email%>"><br/> Senha:
+                        <input
+                            type="password" name='senha' value="<%=dados.password%>"><br/>
+                            <input type="submit">
+                    </form>
+</body>
+
+</html>

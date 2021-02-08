@@ -1,6 +1,5 @@
 module.exports = function(app) {
 
-
     app.get('/frontend', function(req, res) {
 
         var connection = app.app.config.database();
